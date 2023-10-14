@@ -1,0 +1,15 @@
+
+import requests
+import json
+account_id = '4620816365198550950'
+url=f"https://sandbox-quickbooks.api.intuit.com/v3/company/{account_id}/query?query=select * from Invoice"
+headers = {
+    'Accept': 'application/json',
+    'Authorization': 'Bearer eyJlbmMiOiJBMTI4Q0JDLUhTMjU2IiwiYWxnIjoiZGlyIn0..2uQln5WdVtfeghCDdoQtbA.M4cXmSVMPYxOkQYP4tjc7lQrDc2hJkg4SPCfbH6XIe9bZhGYE6Zun-GHqlqlLfRYNR7IQ9sjnFPl5wMjpxEWvl0CZIMRMYFTNPTWMP_znn99JQlKJejXoIq5Ecx1MrXYCLMYkkkh_BCOvJG-GhivNRPjNbRPyP6-UbvQDbhcjIdxrAYGWNNCsvHFI5rRv8ihilYSR4iRMLp8CcLGBTLMwzW4T4mSrC1LH_U_BSw_47YjfS2t2sY8TlJKlo4hBuyrjzHZXr9-NUeerywE7H7CFyaMSZZRuJHCrQmEjPKblEQr1JY2synz4Xi2Yrp0ZjtTPRdpr5TfZv8M6P5m8KpQSH_spn1wRR19KvnEBCMxBbobS0jiAPQQQMtXyNuMmB5QqiVaaoOKydJRdxd0-eCE7nQqFfKnzLcbXh9J8MZ1RKURr9P3zmQA3ptWkiFsF8oijncHiRdKDGiyYrcwGjpfm2SyWahxc_d3FjhlsMiPqzd9EiFRf47UBzm0eSgN6F9HXMCEHmtW3uHbFZcJfOJAiY_UXytTf63sg7_JEdRZZB9FKyzXFbCdSd20ctrOzy1hhnGWExDE00Gxk9cGxHe4hHHMKuUcZwn7BsptDSyb_a5HXrpgTqG2NdkATgVN_8jOUDzciinwx-ajwGCxaa6Kj-drcAp8wMSG4yEyh5FTpmbvKNDkA7d3BZC6D7K7XdQkpX0lYQ9-oHQWczyu5MwQ-kniRB5f6j7u6aGDjduU58PAzqzkYwNfWrwh6avr0tHK.MofGtIr4eNARr_kR18YMMQ'
+    }
+res = requests.get(url, headers=headers)
+res = res.json()
+json_data = json.dumps(res,indent=10)
+print(json_data)
+
+
